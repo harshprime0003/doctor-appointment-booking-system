@@ -1,0 +1,18 @@
+node_modules/
+dist/
+build/
+.env
+server/.env
+client/.env
+*.log
+npm-debug.log*
+.commitmsg.tmp
+.DS_Store
+coverage/
+
+# File-based database contents (keep the directory, ignore data files)
+server/data/*.json
+!server/data/.gitkeep
+
+# Uploaded files (avatars, EHR reports)
+server/uploads/
