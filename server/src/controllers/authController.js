@@ -80,7 +80,9 @@ export const updateProfile = asyncHandler(async (req, res) => {
 
 export const uploadAvatar = asyncHandler(async (req, res) => {
   if (!req.file) throw badRequest('No image uploaded');
-  const avatarUrl = `/uploads/${req.file.filename}`;
+  //const avatarUrl = `/uploads/${req.file.filename}`;
+  const avatarUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+  
   const updated = await Users.updateById(req.user.id, { avatarUrl });
   // Keep the doctor's public profile photo in sync too.
   if (req.user.role === ROLES.DOCTOR) {
