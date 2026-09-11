@@ -99,7 +99,7 @@ export default function Profile() {
             <Field label="Phone" optional>
               <Input value={profile.phone} onChange={setP('phone')} />
             </Field>
-            <Field label="Gender" optional>
+            <Field label="Gender" >
               <Select value={profile.gender} onChange={setP('gender')}>
                 <option value="">Prefer not to say</option>
                 <option value="male">Male</option>
